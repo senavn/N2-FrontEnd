@@ -19,8 +19,10 @@ var port = process.env.PORT || 8092;
 // A primeira linha já trata a questão falada no dia 21/02, sobre diretórios com conteúdo estático.
 // Isso irá permitir que não façamos referência ao bootstrap e outras bibliotecas vindas da internet
 app.use(express.static( __dirname + '/libs/'));
+app.use(express.static( __dirname + '/content/'));
 app.use(express.static( __dirname + '/controllers/'));
 app.use(express.static( __dirname + '/services/'));
+app.use(express.static( __dirname + '/custom/'));
 // Aqui existe uma configuração da camada visão criada pelo express.
 // Duas configurações estão sendo feitas
 // a engine de tratamento de visões usa arquivos .ejs
